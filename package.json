@@ -1,5 +1,5 @@
 {
-  "name": "electron-desktop-ts-react",
+  "name": "electron-app",
   "version": "1.0.0",
   "main": "./dist/electron/main.js",
   "author": "YunlongRan",
