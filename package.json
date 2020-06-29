@@ -6,8 +6,8 @@
   "license": "MIT",
   "description": "",
   "scripts": {
-    "start": "@electron-runner/cli start",
-    "build": "@electron-runner/cli build && electron-builder",
+    "start": "electron-runner start",
+    "build": "electron-runner build && electron-builder",
     "rebuild": "electron-rebuild"
   },
   "build": {
