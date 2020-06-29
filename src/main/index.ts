@@ -1,6 +1,9 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow } from "electron";
+import path from "path";
 
-const winURL = process.env.NODE_ENV === 'development'  ? 'http://localhost:9080' : `file://${__dirname}/index.html`
+const dirname = path.dirname(__dirname);
+const file = path.join(dirname, "renderer", "index.html")
+const winURL = process.env.NODE_ENV === "development"  ? "http://localhost:9080" : `file://${file}`
 
 let mainWindow: BrowserWindow | null;
 
@@ -10,20 +13,20 @@ function createWindow(){
         width: 900,
         useContentSize:true,
         // frame: process.platform !== 'darwin' ? false : true,
-        titleBarStyle: 'hiddenInset',
+        titleBarStyle: "hiddenInset",
         backgroundColor: "#fff",
-        // show: false
+        // show: false,
     })
 
     mainWindow.loadURL(winURL)
 
 
-    mainWindow.on('closed', () => {
+    mainWindow.on("closed", () => {
         mainWindow = null
         app.exit()
     })
 
-    mainWindow.on('ready-to-show', () => {
+    mainWindow.on("ready-to-show", () => {
         if (mainWindow) {
             mainWindow.show()
         }
@@ -34,15 +37,15 @@ function createWindow(){
 
 
 
-app.on('ready', createWindow)
+app.on("ready", createWindow)
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
+app.on("window-all-closed", () => {
+    if (process.platform !== "darwin") {
         app.quit()
     }
 })
 
-app.on('activate', () => {
+app.on("activate", () => {
     if (mainWindow === null) {
         createWindow()
     }
