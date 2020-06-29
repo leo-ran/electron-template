@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from 'electron'
 
-const winURL = process.env.mode === 'development'  ? 'http://localhost:9080' : `file://${__dirname}/index.html`
+const winURL = process.env.NODE_ENV === 'development'  ? 'http://localhost:9080' : `file://${__dirname}/index.html`
 
 let mainWindow: BrowserWindow | null;
 
