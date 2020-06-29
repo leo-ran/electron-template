@@ -16,6 +16,10 @@ function createWindow(){
         titleBarStyle: "hiddenInset",
         backgroundColor: "#fff",
         // show: false,
+        webPreferences: {
+            // 此设置运行渲染进程 使用node Api
+            nodeIntegration: true,
+        }
     })
 
     mainWindow.loadURL(winURL)
