@@ -2,7 +2,7 @@ import { app, BrowserWindow } from 'electron'
 
 const winURL = process.env.mode === 'development'  ? 'http://localhost:9080' : `file://${__dirname}/index.html`
 
-let mainWindow
+let mainWindow: BrowserWindow | null;
 
 function createWindow(){
     mainWindow = new BrowserWindow({
@@ -24,7 +24,9 @@ function createWindow(){
     })
 
     mainWindow.on('ready-to-show', () => {
-        mainWindow.show()
+        if (mainWindow) {
+            mainWindow.show()
+        }
     })
 
     mainWindow.flashFrame(true)
