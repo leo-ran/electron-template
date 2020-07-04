@@ -8,11 +8,13 @@
   "scripts": {
     "start": "electron-runner start",
     "build": "electron-runner build && electron-builder",
-    "rebuild": "electron-rebuild"
+    "rebuild": "electron-rebuild",
+    "postinstall": "electron-builder install-app-deps"
   },
   "build": {
-    "productName": "Electron App",
+    "productName": "Your App Name",
     "appId": "org.electron.app.com",
+    "copyright": "YourName",
     "directories": {
       "output": "build"
     },
@@ -27,6 +29,7 @@
       "license": "./License.txt"
     },
     "dmg": {
+      "icon": "resources/icons/icon.icns",
       "contents": [
         {
           "x": 410,
@@ -41,11 +44,15 @@
         }
       ]
     },
+    "pkg": {
+      "license": "./License.txt"
+    },
     "files": [
       "dist/**/*"
     ],
     "mac": {
-      "icon": "resources/icons/icon.icns"
+      "icon": "resources/icons/icon.icns",
+      "category": "public.app-category.business"
     },
     "linux": {
       "icon": "resources/icons"
@@ -56,7 +63,6 @@
   },
   "devDependencies": {
     "electron-builder": "^22.7.0",
-    "electron-rebuild": "^1.11.0",
     "electron": "^9.0.5"
   },
   "dependencies": {
