@@ -1,20 +1,20 @@
 {
   "name": "electron-app",
   "version": "1.0.0",
-  "main": "./dist/electron/main.js",
-  "author": "YunlongRan",
+  "main": "./dist/main/main.js",
+  "author": "",
   "license": "MIT",
   "description": "test",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "node ./.scripts/dev",
-    "build": "node ./.scripts/build && electron-builder",
-    "dist": "node ./.scripts/build",
-    "rebuild": "./node_modules/.bin/electron-rebuild"
+    "start": "electron-runner start",
+    "build": "electron-runner build && electron-builder",
+    "rebuild": "electron-rebuild",
+    "postinstall": "electron-builder install-app-deps"
   },
   "build": {
-    "productName": "electron desktop",
-    "appId": "org.electron.desktop.app",
+    "productName": "Electron App",
+    "appId": "org.electron.app.com",
+    "copyright": "ranyunlong",
     "directories": {
       "output": "build"
     },
@@ -26,9 +26,10 @@
       "createDesktopShortcut": true,
       "multiLanguageInstaller": true,
       "menuCategory": true,
-      "license": "./license.txt"
+      "license": "./License.txt"
     },
     "dmg": {
+      "icon": "resources/icons/icon.icns",
       "contents": [
         {
           "x": 410,
@@ -43,17 +44,21 @@
         }
       ]
     },
+    "pkg": {
+      "license": "./License.txt"
+    },
     "files": [
       "dist/**/*"
     ],
     "mac": {
-      "icon": "build/icons/icon.icns"
+      "icon": "resources/icons/icon.icns",
+      "category": "public.app-category.business"
     },
     "linux": {
-      "icon": "build/icons"
+      "icon": "resources/icons"
     },
     "win": {
-      "icon": "build/icons/icon.ico"
+      "icon": "resources/icons/icon.ico"
     }
   },
   "devDependencies": {},
