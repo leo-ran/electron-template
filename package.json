@@ -1,7 +1,7 @@
 {
   "name": "electron-app",
   "version": "1.0.0",
-  "main": "./dist/main/main.js",
+  "main": "./dist/application/main.js",
   "author": "",
   "license": "MIT",
   "description": "test",
@@ -62,7 +62,7 @@
     }
   },
   "devDependencies": {
-    "@electron-runner/cli": "^1.0.5",
+    "@electron-runner/cli": "^1.1.5",
     "electron": "^9.0.5",
     "electron-builder": "^22.7.0",
     "vue-loader": "^15.9.3",
