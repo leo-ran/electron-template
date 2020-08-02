@@ -1,8 +1,8 @@
 {
   "name": "electron-app",
   "version": "1.0.0",
-  "main": "./dist/main/main.js",
-  "author": "",
+  "main": "./dist/application/main.js",
+  "author": "ranyunlong",
   "license": "MIT",
   "description": "",
   "scripts": {
@@ -12,7 +12,7 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "build": {
-    "productName": "Your App Name",
+    "productName": "Electron app",
     "appId": "org.electron.app.com",
     "copyright": "YourName",
     "directories": {
@@ -62,7 +62,7 @@
     }
   },
   "devDependencies": {
-    "@electron-runner/cli": "^1.0.5",
+    "@electron-runner/cli": "^1.1.4",
     "electron-builder": "^22.7.0",
     "electron": "^9.0.5"
   },

@@ -1,9 +1,8 @@
 import { app, BrowserWindow } from "electron";
 import path from "path";
 
-const dirname = path.dirname(__dirname);
-const file = path.join(dirname, "renderer", "index.html");
-const winURL = process.env.NODE_ENV === "development"  ? "http://localhost:9080" : `file://${file}`;
+const file = path.join(__dirname, "renderer", "index.html");
+const winURL = process.env.NODE_ENV === "development"  ? "http://localhost:9080" : `file:///${file}`;
 
 let mainWindow: BrowserWindow | null;
 
