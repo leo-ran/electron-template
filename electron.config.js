@@ -1,6 +1,5 @@
 const {VueLoaderPlugin} = require("vue-loader");
 
-console.log(111);
 module.exports  = {
     // 添加vue-loader (cli中默认没有添加vue-loader)
     overwriteLoaders: (loaders) => {
